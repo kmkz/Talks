@@ -30,7 +30,7 @@ int main (void){
 
     
         /* Routine anti débugg */
-	if((ptrace(ptrace(PTRACE_TRACEME,0,1,0) < 0)) != -1 ){
+	if((ptrace(ptrace(PTRACE_TRACEME,0,1,0) < 0)) == -1 ){
 		/* if DBG attached = exit to stay stealthy */
 		exit(EXIT_FAILURE);
 	}
