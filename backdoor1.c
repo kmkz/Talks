@@ -6,8 +6,41 @@
 # include <sys/ptrace.h>
 # include <unistd.h>
 
-int byte_ =(0);
+//cryptage des fonction sub
+//extern void* __libc_csu_init;
+//static void dummy();
+//#define round_down(to_round,page_size) ((((unsigned long) to_round)/page_size)*page_size)
+//#define round_up(to_round,page_size) (round_down(to_round, page_size) + page_size)
+//static void __attribute__((constructor)) stub(void){
+//void* start = &dummy;
+//void* end = &__libc_csu_init;
+//size_t code_size = (((unsigned long) end)) - ((unsigned long) start);
+//size_t page_size = getpagesize();
+//mprotect((void*) round_down(start, page_size), round_up(code_size, page_size),
+//PROT_READ | PROT_WRITE | PROT_EXEC);
+//memfrob(&dummy, code_size);
+//mprotect((void*) round_down(start, page_size), round_up(code_size, page_size),
+//PROT_READ | PROT_EXEC);
+//}
+//static void dummy(){}
 
+//int detect_ld_env(char **envp){
+//char **p;
+//for (p = envp; *p != NULL; p++) {
+//if ((*p)[0] == 'L' && (*p)[1] == 'D' && (*p)[2] == '_')
+//return 1;
+//}
+//return 0;
+//}
+
+
+//void __attribute__((constructor)) cleanup(void){
+//unsetenv("LD_PRELOAD");
+//unsetenv("LD_LIBRARY_PATH");
+//}
+//long ptrace(int req, int pid, void *adr, void *dat){
+//return 0;
+//}
 
 int main (void){
         
@@ -45,7 +78,7 @@ int main (void){
 
         
 	int nPid=fork();
-	
+	//prctl(PR_SET_NAME, random_string()); //donne une nom aléatoire au pid la fonction random_string reste à coder 
 	switch(nPid){
 		case 0: {
 			seteuid(0);
