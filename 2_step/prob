@@ -1,2 +1,29 @@
 Probléme de segfault sur le programme 2_step.
 Trouve d'ou vient le problème de segfault.
+
+
+Probleme résolu: j'ai mis la source a toi de compiler et de tester.
+
+Chez moi c'est ok : 
+
+root@3lRvs:~/Desktop/Articles# gcc -o Back1 Back1.c 
+root@3lRvs:~/Desktop/Articles# ./Back1 &
+[1] 2804
+root@3lRvs:~/Desktop/Articles# netstat -tulpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 0.0.0.0:31337           0.0.0.0:*               LISTEN      2804/nc         
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1065/master     
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1801/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1607/dhclient3  
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1335/dhclient3  
+root@3lRvs:~/Desktop/Articles# killall nc
+
+[1]+  Exit 1                  ./Back1
+root@3lRvs:~/Desktop/Articles# netstat -tulpn
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1065/master     
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1801/dhclient   
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1607/dhclient3  
+udp        0      0 0.0.0.0:68 
