@@ -1,0 +1,2 @@
+Le pid n'est pas crypté et le shellcode apparait en clair.
+nc 
