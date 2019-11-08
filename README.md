@@ -1,10 +1,6 @@
-Articles
+Talks
 ========
 
-Lien vers le wiki du projet: https://github.com/kmkz/Articles/wiki 
+- Security Bsides Dublin 2019: "A post-exploitation tales... in real life!"
 
-Auteurs:
-
--Bourbon Jean-Marie (kmkz)
- 
--Dubourg Paul (regol)
+- JS Meetup Luxmbourg (Nivember 2019): "How I met your browser"
