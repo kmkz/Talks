@@ -7,4 +7,4 @@ Talks
 
 - Swiss Cyber Security Days 2020: "Pwn me, I m famous (Feat. JS)"
 
--  ROOTCON 14 "recovery mode": s00n
+-  ROOTCON 14 "recovery mode": Payload delivery for initial access in Adversary Simulation exercise

