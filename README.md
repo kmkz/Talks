@@ -7,4 +7,7 @@ Talks
 
 - Swiss Cyber Security Days 2020: "Pwn me, I m famous (Feat. JS)"
 
--  ROOTCON 14 "recovery mode": Payload delivery for initial access in Adversary Simulation exercise
+- ROOTCON 14 "recovery mode": Payload delivery for initial access in Adversary Simulation exercise
+
+- HITB+ UAE 2020 / Red Team Village: "Payload delivery for initial access in Red Team engagement and Adversary Simulation" (updated content)
+	YouTube link: https://www.youtube.com/watch?v=fLskXxHjQAI 
